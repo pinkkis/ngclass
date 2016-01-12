@@ -12,7 +12,7 @@ export class List {
     movies: Array<Movie> = [];
     
     /**
-     *
+     * Movie List component
      */
     constructor(movieData: MovieData) {
         //this.movies = 

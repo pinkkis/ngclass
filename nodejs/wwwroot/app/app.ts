@@ -6,10 +6,8 @@ import {Movie} from './movie/movie';
 import {Detail} from "./movie/detail";
 import "rxjs/add/operator/map";
 
-// component must have at least selector and template
 @Component({
   selector: 'movie-app',
-  //template: '<div>{{message}}</div>',
   templateUrl: '/app/app.html',
   directives: [ROUTER_DIRECTIVES]
 })

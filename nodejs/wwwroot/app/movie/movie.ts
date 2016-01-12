@@ -5,7 +5,7 @@ export class Movie {
     id: number;
     
     /**
-     * Movie model constructor
+     * Movie model
      */
     constructor(id: number, title: string, rating: number, year: number) {
         this.id = id;

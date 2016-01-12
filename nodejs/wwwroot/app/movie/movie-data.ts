@@ -7,7 +7,7 @@ let componentBaseUrl = '/api/movies';
 @Injectable()
 export class MovieData {
     /**
-     *
+     * Movie Data service
      */
     private movies: Array<Movie> = [];
     componentBaseUrl: string;
