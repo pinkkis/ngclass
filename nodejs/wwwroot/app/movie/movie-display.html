@@ -1,0 +1,10 @@
+<div class="">
+    <h3><a [routerLink]="['Detail', {id: movie.id}]">{{movie.title}}</a> <small>{{movie.year}}</small></h3>
+    <div [ngClass]="{'text-success': movie.isGood(), 'text-danger': movie.isBad()}">
+        {{movie.rating | rating}} - 
+        <button class="btn btn-success" (click)="movie.increaseRating($event)"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-danger" (click)="movie.decreaseRating($event)"><i class="fa fa-minus"></i></button>
+        <button class="btn btn-default" (click)="edit()"><i class="fa fa-edit"></i></button>
+    </div>
+
+</div>

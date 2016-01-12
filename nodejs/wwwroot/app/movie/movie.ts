@@ -1,4 +1,11 @@
-export class Movie {
+export interface MovieType {
+    id: number;
+    title: string;
+    rating: number;
+    year: number;
+}
+
+export class Movie implements MovieType {
     title: string;
     rating: number;
     year: number;

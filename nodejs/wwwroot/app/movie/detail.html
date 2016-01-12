@@ -2,7 +2,7 @@
     <h4>{{movie?.title}}</h4>
     <dl>
         <dt>Rating</dt>
-        <dd>{{movie?.rating}}</dd>
+        <dd>{{movie?.rating | rating}}</dd>
         <dt>Year</dt>
         <dd *ngIf="movie?.year">{{movie?.year}}</dd>
         <dd *ngIf="!movie?.year">N/A</dd>

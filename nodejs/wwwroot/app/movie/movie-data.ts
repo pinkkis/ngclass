@@ -1,6 +1,6 @@
 import {Injectable} from "angular2/core";
-import {Http} from "angular2/http";
-import {Movie} from "./Movie";
+import {Http, Headers, RequestOptions} from "angular2/http";
+import {Movie, MovieType} from "./Movie";
 
 let componentBaseUrl = '/api/movies';
 
@@ -9,13 +9,22 @@ export class MovieData {
     /**
      * Movie Data service
      */
-    private movies: Array<Movie> = [];
+    private movies: Array<MovieType> = [];
     componentBaseUrl: string;
     
     constructor(private http: Http) {
         this.http = http;
     }
     
+    update(movie: MovieType) {
+        let options = new RequestOptions();
+        options.headers = new Headers();
+        
+        options.headers.append('Content-Type', 'application/json');
+        options.headers.append('Accept', 'application/json');
+        
+        return this.http.put(`${componentBaseUrl}`, JSON.stringify(movie), options);
+    }
     
     getAll() {
         return this.http.get(`${componentBaseUrl}`)

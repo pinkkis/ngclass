@@ -2,6 +2,7 @@ import {Component} from "angular2/core";
 import {Router, RouteParams, CanActivate, OnActivate, ComponentInstruction} from "angular2/router";
 import {MovieData} from "./movie-data";
 import {Movie} from "./movie";
+import {RatingPipe} from "./rating-pipe";
 
 let logActivate = function(prev: ComponentInstruction, next: ComponentInstruction) {
     console.log(prev, next);
@@ -10,7 +11,8 @@ let logActivate = function(prev: ComponentInstruction, next: ComponentInstructio
 
 @Component({
     selector: "movie-detail",
-    templateUrl: "/app/movie/detail.html"
+    templateUrl: "/app/movie/detail.html",
+    pipes: [RatingPipe]
 })
 @CanActivate(logActivate)
 export class Detail implements OnActivate{
@@ -28,9 +30,7 @@ export class Detail implements OnActivate{
        movieData
         .getById(parseInt(id, 10))
         .subscribe(
-            (m) => {
-                this.movie = m;
-            },
+            (m) => this.movie = m,
             (e) => console.log('error', e));
         
     }

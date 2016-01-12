@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <table class="table table-condensed">
+        <!--<table class="table table-condensed">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -21,10 +21,15 @@
                     <td>
                         <button class="btn btn-success" (click)="movie.increaseRating($event)"><i class="fa fa-plus"></i></button>
                         <button class="btn btn-danger" (click)="movie.decreaseRating($event)"><i class="fa fa-minus"></i></button>
+                        <button (click)="editMovie(movie.id)">edit</button>
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
+
+        <div *ngFor="#movie of movies">
+            <movie-display [movie]="movie" (editMovie)="editMovie($event.id)"></movie-display>
+        </div>
 
     </div>
 </div>
