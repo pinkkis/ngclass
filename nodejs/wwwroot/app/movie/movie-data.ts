@@ -1,6 +1,6 @@
 import {Injectable} from "angular2/core";
 import {Http, Headers, RequestOptions} from "angular2/http";
-import {Movie, MovieType} from "./Movie";
+import {Movie, MovieType} from "./movie";
 
 let componentBaseUrl = '/api/movies';
 

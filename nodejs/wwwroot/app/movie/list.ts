@@ -1,5 +1,5 @@
 import {Component} from "angular2/core";
-import {Movie} from "./Movie";
+import {Movie} from "./movie";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 import {MovieData} from "./movie-data";
 import {RatingPipe} from "./rating-pipe";
