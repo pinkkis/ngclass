@@ -10,15 +10,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="#movie of movies" [ngClass]="{'text-success': movie.isGood(), 'text-danger': movie.isBad()}">
+                <tr *ngFor="#movie of movies">
                     <td>
                         <a [routerLink]="['Detail', {id: movie.id}]">{{movie.title}}</a>
                     </td>
                     <td>{{movie.year}}</td>
-                    <td>{{movie.rating}}</td>
+                    <td [ngClass]="{'text-success': movie.isGood(), 'text-danger': movie.isBad()}">
+                        {{movie.rating | rating}}
+                    </td>
                     <td>
-                        <button class="btn btn-success" (click)="movie.increaseRating()"><i class="fa fa-plus"></i></button>
-                        <button class="btn btn-danger" (click)="movie.decreaseRating()"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-success" (click)="movie.increaseRating($event)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-danger" (click)="movie.decreaseRating($event)"><i class="fa fa-minus"></i></button>
                     </td>
                 </tr>
             </tbody>

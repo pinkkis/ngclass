@@ -21,8 +21,10 @@ export class MovieApp {
      * Main app
      */
     title: string;
+    today: Date;
     
     constructor() {
         this.title = "At the Movies";
+        this.today = new Date();
     }
 }

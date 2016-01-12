@@ -14,13 +14,17 @@ export class Movie {
         this.year = year;       
     }
     
-    increaseRating() {
+    increaseRating(event: Event) {
+        event.stopPropagation();
+        
         if (this.rating < 5) {
             this.rating += 1;
         }
     }
     
-    decreaseRating() {
+    decreaseRating(event: Event) {
+        event.stopPropagation();
+        
         if (this.rating > 1) {
             this.rating -= 1;
         }
